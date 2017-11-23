@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "mkdir -p static/dist/ && ./node_modules/.bin/browserify client.js -o static/dist/bundle.js",
-    "start": "node server.js"
+    "start": "node server.js", 
+    "postininstall":"mkdir -p static/dist/ && ./node_modules/.bin/browserify client.js -o static/dist/bundle.js"
   },
   "author": "",
   "license": "ISC",
