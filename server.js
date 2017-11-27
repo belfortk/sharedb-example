@@ -15,6 +15,7 @@ function createDoc(callback) {
     if (err) throw err;
     if (doc.type === null) {
       doc.create('', callback);
+      console.log('new document created')
       return;
     }
     callback();
@@ -32,6 +33,8 @@ function startServer() {
   wss.on('connection', function(ws, req) {
     var stream = new WebSocketJSONStream(ws);
     backend.listen(stream);
+    console.log('connected');
+    console.log(ws.id);
   });
 
   server.listen(process.env.PORT || 8080);

@@ -9,6 +9,7 @@ var connection = new sharedb.Connection(socket);
 var doc = connection.get('examples', 'textarea');
 doc.subscribe(function(err) {
   if (err) throw err;
+  console.log('client subscribed');
   var element = document.querySelector('textarea');
   var binding = new StringBinding(element, doc);
   binding.setup();
